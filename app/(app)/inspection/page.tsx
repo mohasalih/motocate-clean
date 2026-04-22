@@ -156,17 +156,42 @@ export default function InspectionPage() {
             <div className="mc-card">
               <div style={{ fontSize:14, fontWeight:700, color:'#e2e8f0', marginBottom:14 }}>Summary</div>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:8, marginBottom:16 }}>
-                {[
+               {[
   ['Good', '#22c55e', goodCount],
   ['Needs Attn', '#fbbf24', okCount],
   ['Issues', '#f87171', badCount]
 ].map(([label, color, n], i) => (
-                  <div key={l} style={{ background: `${color}14`, border: `1px solid ${color}33`, borderRadius:8, padding:12, textAlign:'center' }}>
-                    <div style={{ fontSize:24, fontWeight:800, color:tc, fontFamily:"'Syne',sans-serif" }}>{String(n)}</div>
-                    <div style={{ fontSize:11, color:'#4b5563', marginTop:2 }}>{l}</div>
-                  </div>
-                ))}
-              </div>
+  <div
+    key={i}
+    style={{
+      background: `${color}14`,
+      border: `1px solid ${color}33`,
+      borderRadius: 8,
+      padding: 12
+    }}
+  >
+    <div
+      style={{
+        fontSize: 24,
+        fontWeight: 800,
+        color: color,
+        fontFamily: 'Syne, sans-serif'
+      }}
+    >
+      {String(n)}
+    </div>
+
+    <div
+      style={{
+        fontSize: 11,
+        color: '#4b5563',
+        marginTop: 2
+      }}
+    >
+      {label}
+    </div>
+  </div>
+))}
               <div style={{ padding:'10px 14px', borderRadius:8, background:'rgba(255,255,255,.03)', border:'1px solid #1e2535', fontSize:13, display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:16 }}>
                 <span style={{ color:'#9ca3af' }}>Overall Status</span>
                 <span style={{ fontWeight:700, color:(statusColor as any)[overall]||'#6b7280' }}>{overall}</span>
