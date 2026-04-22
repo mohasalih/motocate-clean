@@ -156,8 +156,12 @@ export default function InspectionPage() {
             <div className="mc-card">
               <div style={{ fontSize:14, fontWeight:700, color:'#e2e8f0', marginBottom:14 }}>Summary</div>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:8, marginBottom:16 }}>
-                {[['Good','#22c55e','#4ade80',goodCount],['Needs Attn','#eab308','#fbbf24',okCount],['Issues','#ef4444','#f87171',badCount]].map(([l,bg,tc,n])=>(
-                  <div key={l} style={{ background: `${bg}14`, border:`1px solid ${bg}33`, borderRadius:8, padding:12, textAlign:'center' }}>
+                {[
+  ['Good', '#22c55e', goodCount],
+  ['Needs Attn', '#fbbf24', okCount],
+  ['Issues', '#f87171', badCount]
+].map(([label, color, n], i) => (
+                  <div key={l} style={{ background: `${color}14`, border: `1px solid ${color}33`, borderRadius:8, padding:12, textAlign:'center' }}>
                     <div style={{ fontSize:24, fontWeight:800, color:tc, fontFamily:"'Syne',sans-serif" }}>{String(n)}</div>
                     <div style={{ fontSize:11, color:'#4b5563', marginTop:2 }}>{l}</div>
                   </div>
