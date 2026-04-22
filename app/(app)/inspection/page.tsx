@@ -77,7 +77,12 @@ export default function InspectionPage() {
 
   function F(k:string) { return (v:string) => setForm((p:any)=>({...p,[k]:v})) }
 
-  const statusColor = { Good:'#4ade80', 'Needs Attention':'#fbbf24', Critical:'#f87171', Pending:'#6b7280' }
+  const statusColor = {
+  Good: '#4ade80',
+  'Needs Attention': '#fbbf24',
+  Critical: '#f87171',
+  Pending: '#6b7280'
+}
 
   return (
     <div style={{ padding:'28px 32px' }} className="animate-fadeUp">
